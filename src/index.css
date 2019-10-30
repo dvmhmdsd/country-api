@@ -5,5 +5,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* set the default font size for home page */
+/* set the general container */
+.container {
+  width: 90%;
+  margin: auto;
+}
 
+/* style the navbar */
+.app-nav {
+  box-shadow: 1px 0 2px 3px #eee;
+}
+
+@media (max-width: 375px) {
+  .app-nav h1 {
+    font-size: 17px;
+  }
+}
+
+.app-nav .nav-toggle {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.app-nav .hover-light:hover {
+  background-color: rgba(43, 56, 69, 0.1);
+}
+
+
+.app-nav .hover-dark:hover {
+  background-color: rgba(43, 56, 69);
+}
+
+.app-nav .nav-toggle i {
+  margin-right: 4px;
+}
+
+.app-nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TODO: set the default font size for home page */

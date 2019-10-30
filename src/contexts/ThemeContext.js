@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export const ThemeContextProvider = createContext();
+export const ThemeContext = createContext();
 
 export default ({ children }) => {
   // set the default style for every theme
@@ -22,12 +22,12 @@ export default ({ children }) => {
 
   // toggle theme by editing the "isLight" property
   let toggleTheme = () => {
-    setTheme({ isLight: !this.state.isLight });
+    setTheme({ ...theme, isLight: !theme.isLight });
   };
 
   return (
-    <ThemeContextProvider.Provider value={{ ...theme, toggle: toggleTheme }}>
+    <ThemeContext.Provider value={{ ...theme, toggle: toggleTheme }}>
       {children}
-    </ThemeContextProvider.Provider>
+    </ThemeContext.Provider>
   );
 };
