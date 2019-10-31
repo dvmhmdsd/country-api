@@ -1,0 +1,75 @@
+/* style the home component */
+#Home {
+    min-height: 100%;
+    font-size: 14px;
+}
+
+/* make the control box flexible */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+
+  /* give it enough spacing */
+  padding: 120px 0 40px;
+}
+
+/* make each child fit its width */
+.controls > * {
+  flex-grow: 1;
+}
+
+/* style the input field */
+.controls .filter-search .search-items {
+  width: 70%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.controls .filter-search input {
+  border: 0;
+  padding: 9px 8px;
+  font-size: 16px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.controls .filter-search i {
+  padding: 0 20px;
+  color: #333;
+}
+
+/* style filter region select */
+.filter-region .css-yk16xz-control {
+  border: 0;
+  outline: 0;
+}
+
+
+/* control the mode */
+.controls .filter-search .search-items.shadow-light {
+    box-shadow: 0px 0px 5px 3px #eee;
+}
+
+.controls .filter-search .search-items.shadow-dark {
+    box-shadow: 0px 0px 7px 0 #000;
+}
+
+.filter-region.shadow-light .css-yk16xz-control {
+    box-shadow: 0px 0px 5px 3px #eee;
+}
+
+.filter-region.shadow-dark .css-yk16xz-control {
+    box-shadow: 0px 0px 7px 0 #000;
+    background-color: hsl(209, 23%, 22%)
+}
+
+
+/* style the countries cards section */
+.countries-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

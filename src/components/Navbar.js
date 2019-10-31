@@ -7,10 +7,10 @@ export default () => {
 
   let style = {
     color: mode.txt,
-    backgroundColor: mode.bg
+    backgroundColor: mode.elBack
   };
   return (
-    <nav className="app-nav" style={style}>
+    <nav className={`app-nav mode-${isLight ? "light" : "dark"}`} style={style}>
       <div className="container">
         <h1> Where in the world? </h1>
 
