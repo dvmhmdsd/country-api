@@ -33,6 +33,7 @@ export default class Home extends Component {
     });
   }
 
+  // search for countries
   handleSearch = e => {
     axios
       .get(`https://restcountries.eu/rest/v2/name/${e.target.value}`)
@@ -43,6 +44,7 @@ export default class Home extends Component {
       });
   };
 
+  // filter the data
   handleFilter = e => {
     axios
       .get(`https://restcountries.eu/rest/v2/region/${e.value}`)
@@ -76,6 +78,7 @@ export default class Home extends Component {
                       onChange={this.handleSearch}
                       type="text"
                       placeholder="Search for a country.."
+                      style={{color: mode.txt}}
                     />
                   </section>
                 </section>
@@ -107,53 +110,3 @@ export default class Home extends Component {
     );
   }
 }
-
-// export default () => {
-//   // init the state
-//   const [countries, setCountries] = useState([]);
-
-//   let { isLight, light, dark } = useContext(ThemeContext);
-//   let mode = isLight ? light : dark;
-
-//   // init an empty array to edit in useEffect
-//   let countArr = [];
-
-//   // get data on render
-//   useEffect(() => {
-//     // get all countries
-//     axios
-//       .get("https://restcountries.eu/rest/v2/all")
-//       .then(res => countArr.push(...res.data));
-//   }, []);
-
-//   console.log(countArr);
-
-//   return (
-//     <div style={!isLight ? { backgroundColor: mode.bg } : null} id="Home">
-//       <section className="controls container">
-//         <section className="filter-search">
-//           <section
-//             style={{ backgroundColor: mode.elBack, color: mode.txt }}
-//             className={`search-items shadow-${isLight ? "light" : "dark"}`}
-//           >
-//             <i style={{ color: mode.txt }} className="fa fa-search"></i>
-
-//             <input type="text" placeholder="Search for a country.." />
-//           </section>
-//         </section>
-
-//         <section
-//           className={`filter-region shadow-${isLight ? "light" : "dark"}`}
-//         >
-//           <Select
-//             style={{ backgroundColor: mode.elBack, color: mode.txt }}
-//             options={options}
-//             placeholder="Filter by region"
-//           />
-//         </section>
-//       </section>
-
-//       <p style={{ textAlign: "center" }}> {typeof countries} </p>
-//     </div>
-//   );
-// };
