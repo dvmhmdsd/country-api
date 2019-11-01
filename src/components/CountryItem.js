@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 
+import { Link } from "react-router-dom";
+
 import "./CountryItem.css";
 import { ThemeContext } from "../contexts/ThemeContext";
 
@@ -17,24 +19,32 @@ export default ({ country }) => {
         </section>
 
         <section className="country-info">
-          <p className="country-name"> {country.name} </p>
+          <p className="country-name">
+            <Link
+              style={{ color: mode.txt, textDecoration: "none" }}
+              to={`/${country.alpha3Code}`}
+            >
+              {" "}
+              {country.name}{" "}
+            </Link>
+          </p>
 
           <ul className="country-data">
             <li className="country-data-item">
               <span className="data-key" style={{ color: mode.txt }}>
-                Population: {" "}
+                Population:{" "}
               </span>
               {country.population.toLocaleString()}
             </li>
             <li className="country-data-item">
               <span className="data-key" style={{ color: mode.txt }}>
-                Region: {" "}
+                Region:{" "}
               </span>
               {country.region}
             </li>
             <li className="country-data-item">
               <span className="data-key" style={{ color: mode.txt }}>
-                Capital: {" "}
+                Capital:{" "}
               </span>
               {country.capital}
             </li>
