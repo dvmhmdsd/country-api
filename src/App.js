@@ -3,7 +3,7 @@ import React from "react";
 // implement routing
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import "./index.css";
+import "./index.scss";
 
 import ThemeContextProvider from "./contexts/ThemeContext";
 

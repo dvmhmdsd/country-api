@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 // modular styling
-import "./Home.css";
+import "./Home.scss";
 // "React-select" library
 import Select from "react-select";
 // axios to perform http requests

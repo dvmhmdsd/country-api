@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
-import "./CountryItem.css";
+import "./CountryItem.scss";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 export default ({ country }) => {

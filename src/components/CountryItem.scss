@@ -1,24 +1,25 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
 .country-card {
   margin-bottom: 20px;
-}
 
-@media (min-width: 376px) {
-  .country-card {
+  @include media(375px) {
     flex: 0 1 calc(25% - 1em);
   }
 }
 
 .country-card .country-card-content {
-  border-radius: 4px;
+  border-radius: $cardBorderRadius;
   overflow: hidden;
 }
 
 .country-card .country-card-content.mode-light {
-  box-shadow: 0px 0px 7px 0 #eee;
+  box-shadow: 0px 0px 7px 0 $shadowLight;
 }
 
 .country-card .country-card-content.mode-dark {
-  box-shadow: 0px 0px 7px 0 #000;
+  box-shadow: 0px 0px 7px 0 $shadowDark;
 }
 
 .country-card .country-info {
@@ -26,18 +27,16 @@
 }
 
 .country-card .country-data {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  @include listNone;
 }
 
 .country-card .country-info .country-name {
-  font-weight: 800;
+  font-weight: $dkFontWeight;
   font-size: 1.1rem;
 }
 
 .country-card .country-data .data-key {
-  font-weight: 600;
+  font-weight: $mdFontWeight;
   color: rgba(0, 0, 0, 0.7);
 }
 

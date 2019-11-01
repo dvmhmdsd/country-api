@@ -3,7 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 import axios from "axios";
 
-import "./CountryDetails.css";
+import "./CountryDetails.scss";
 
 export default class CountryDetails extends Component {
   state = {
@@ -73,7 +73,7 @@ export default class CountryDetails extends Component {
                         </li>
                         <li style={{ color: mode.txt }}>
                           <span className="data-key"> Population: </span>{" "}
-                          {country.population}
+                          {country.population && country.population.toLocaleString()}
                         </li>
                         <li style={{ color: mode.txt }}>
                           <span className="data-key"> Region: </span>{" "}

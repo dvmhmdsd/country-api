@@ -1,0 +1,65 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $ltFontWeight
+}
+
+/* set the general container */
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* style the navbar */
+
+.app-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  &.mode-light {
+    box-shadow: 1px 0 2px 3px $shadowLight;
+  }
+
+  &.mode-dark {
+    box-shadow: 0;
+  }
+
+  .nav-toggle {
+    background-color: transparent;
+    @include btn;
+    transition: background-color 0.4s;
+  }
+
+  .hover-light:hover {
+    background-color: rgba(43, 56, 69, 0.1);
+  }
+
+  .hover-dark:hover {
+    background-color: rgba(43, 56, 69, 1);
+  }
+
+  .nav-toggle i {
+    margin-right: 4px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* control mode */
+
+@media (max-width: $breackPoint) {
+  .app-nav h1 {
+    font-size: 17px;
+  }
+}

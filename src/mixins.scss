@@ -1,0 +1,29 @@
+// mixins for list style & for responsive
+
+// make the component get the full height
+@mixin fullHeight {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+
+// the default style for list
+@mixin listNone {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// default style for buttons
+@mixin btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+// responsive
+@mixin media($breakPoint){
+    @media (min-width: $breakPoint) {
+      @content;
+    }
+}
